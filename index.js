@@ -157,6 +157,16 @@ $('.done-submit').click(function () {
     add_card('.done-input', 'Done');
 });
 
+$('#having-account').click(function () {
+    $('#sign-up').hide();
+    $('#log-in').show();
+});
+
+$('#not-having-account').click(function () {
+    $('#sign-up').show();
+    $('#log-in').hide();
+})
+
 function add_card(input, directory){
     if($(input).val() !== ''){
         var getDate = new Date();
