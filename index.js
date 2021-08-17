@@ -215,3 +215,12 @@ $('#sign-up-button').click(function () {
         $('#error-message').html(err.message);
     });
 });
+
+$('#log-in-button').click(function () {
+    firebase.auth().signInWithEmailAndPassword($('.log-in #email').val(), $('.log-in #password').val())
+    .then(() => {
+        $('#My-ToDo').show();
+        $('header').show();
+        $('#log-in').hide();
+    })
+});
