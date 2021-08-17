@@ -1,0 +1,363 @@
+:root {
+    --common-color: rgb(40, 40, 40);
+    --second-color: rgb(178, 0, 255);
+    --third-color: rgb(99, 99, 99);
+    --todo-width: 21%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(20, 20, 20);
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    color: white;
+}
+
+header .user-status-button {
+    background-color: var(--second-color);
+    width: 120px;
+    height: 50px;
+    float: right;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    margin-top: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+header .user-status-button:hover {
+    background-color: transparent;
+    border: 2px solid var(--second-color);
+    color: var(--second-color);
+}
+
+#list {
+    background-color: var(--common-color);
+    justify-content: center;
+    width: var(--todo-width);
+    height: auto;
+    margin: 2%;
+    position: absolute;
+    top: 5%;
+    border-radius: 10px;
+}
+
+#list h1 {
+    color: var(--second-color);
+    font-size: 20px;
+    margin: 10px;
+}
+
+.todo {
+    left: 0%;
+}
+
+.working {
+    left: 25%;
+}
+
+.done {
+    left: 50%;
+}
+
+.pending {
+    left: 75%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--third-color);
+    color: white;
+    width: calc(100% - 20px);
+    height: auto;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card:hover button {
+    display: inline-block;
+}
+
+.card p {
+    margin: 10px;
+}
+
+.card #date {
+    position: relative;
+    left: 57%;
+    margin: 10px;
+}
+
+.card button {
+    background-color: transparent;
+    display: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin-top: 4px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid var(--second-color);
+}
+
+.card .delete {
+    left: 86%;
+}
+
+.card .next {
+    left: calc(86% - 30px - 2px);
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    margin-left: 35%;
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid var(--second-color);
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.add-another-card {
+    color: white;
+    width: 50%;
+    height: 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#add-input {
+    outline: 2px solid var(--second-color);
+    width: 50%;
+    height: 30px;
+    margin-left: 15%;
+}
+
+#add-submit {
+    background-color: var(--second-color);
+    color: white;    
+    width: 20%;
+    height: 30px;
+    border: none;
+    margin-left: 10px;
+}
+
+.delete_card_1 {
+    animation: delete_card_1 0.5s;
+}
+
+@keyframes delete_card_1 {
+    0% { transform: scale(0.1); }
+    75% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.delete_card_2 {
+    animation: delete_card_2 0.5s;
+}
+
+@keyframes delete_card_2 {
+    0% { transform: scale(1); }
+    75% { transform: scale(1.2); }
+    100% { transform: scale(0.1); }
+}
+
+.sign-up h2 {
+    color: var(--second-color);
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+}
+
+.sign-up .input {
+    font-family: inherit;
+    width: 25%;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+  
+.sign-up .input:focus {
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, rgb(178, 0, 255), rgb(108, 0, 155));
+    border-image-slice: 1;
+}
+  
+.sign-up .input:focus::placeholder {
+    color: transparent;
+}
+
+.sign-up #email {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+}
+
+.sign-up #password {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translateX(-50%);
+}
+
+.sign-up #confirm-password {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translateX(-50%);
+}
+
+.sign-up #sign-up-button {
+    background-color: var(--second-color);
+    width: 25%;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translateX(-50%);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.sign-up #sign-up-button:hover {
+    cursor: pointer;
+    border: 3px solid rgb(178, 0, 255);
+    background-color: rgba(178, 0, 255, 0);
+    color: var(--second-color);
+}
+
+.sign-up #error-message {
+    color: red;
+    position: absolute;
+    left: 50%;
+    top: 63%;
+    transform: translateX(-50%);
+}
+
+.sign-up #having-account {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 67%;
+    transform: translateX(-50%);
+}
+
+.sign-up #having-account a {
+    color: var(--second-color);
+}
+
+.log-in h2 {
+    color: var(--second-color);
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+}
+
+.log-in .input {
+    font-family: inherit;
+    width: 25%;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+  
+.log-in .input:focus {
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, rgb(178, 0, 255), rgb(108, 0, 155));
+    border-image-slice: 1;
+}
+  
+.log-in .input:focus::placeholder {
+    color: transparent;
+}
+
+.log-in #email {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+}
+
+.log-in #password {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translateX(-50%);
+}
+
+.log-in #log-in-button {
+    background-color: var(--second-color);
+    width: 25%;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translateX(-50%);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.log-in #log-in-button:hover {
+    cursor: pointer;
+    border: 3px solid rgb(178, 0, 255);
+    background-color: rgba(178, 0, 255, 0);
+    color: var(--second-color);
+}
+
+.log-in #error-message {
+    color: red;
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    transform: translateX(-50%);
+}
+
+.log-in #not-having-account {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 57%;
+    transform: translateX(-50%);
+}
+
+.log-in #not-having-account a {
+    color: var(--second-color);
+}

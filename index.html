@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> My-Todo </title>
+        <link rel="stylesheet" href="index.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+        
+        <script defer src="index.js"></script>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="main">
+            <header>
+                <button class="user-status-button"></button>
+            </header>
+            <section id="My-ToDo">
+                <div class="todo" id="list">
+                    <h1> To Do </h1>
+                    <section class="cards"></section>
+                    <div class="loader"></div>
+                    <section class="adding-another-card">
+                        <input class="todo-input" id="add-input" placeholder="message">
+                        <button class="todo-submit" id="add-submit"> Submit </button>
+                    </section>
+                    <div class="add-another-card"> + Add another card </div>
+                </div>
+                <div class="working" id="list">
+                    <h1> Working </h1>
+                    <div class="loader"></div>
+                    <section class="cards"></section>
+                    <section class="adding-another-card">
+                        <input class="done-input" id="add-input" placeholder="message">
+                        <button class="working-submit" id="add-submit"> Submit </button>
+                    </section>
+                    <div class="add-another-card"> + Add another card </div>
+                </div>
+                <div class="done" id="list">
+                    <h1> Done </h1>
+                    <div class="loader"></div>
+                    <section class="cards"></section>
+                    <section class="adding-another-card">
+                        <input class="done-input" id="add-input" placeholder="message">
+                        <button class="done-submit" id="add-submit"> Submit </button>
+                    </section>
+                    <div class="add-another-card"> + Add another card </div>
+                </div>
+            </section>
+            <section id="sign-up">
+                <div class="sign-up">
+                    <h2> My Anime List </h2>               
+                    <input type="email" id="email" class="input" placeholder="Email" required />
+                    <input type="password" id="password" class="input" placeholder="Password" required />
+                    <input type="password" id="confirm-password" class="input" placeholder="Confirmation Password">
+                    <button id="sign-up-button"> Sign up  </button>
+                    <p id="error-message"></p>
+                    <p id="having-account"> Already have an account? <a> Sign in </a> </p>
+                </div>
+            </section>
+            <section id="log-in">
+                <div class="log-in">
+                    <h2> My Anime List </h2>               
+                    <input type="email" id="email" class="input" placeholder="Email" required />
+                    <input type="password" id="password" class="input" placeholder="Password" required />
+                    <button id="log-in-button"> Log In  </button>
+                    <p id="error-message"></p>
+                    <p id="not-having-account"> Don't have an account? <a> Sign up </a> </p>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
